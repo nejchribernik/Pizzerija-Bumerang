@@ -1,0 +1,232 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[slovene]{babel}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[margin=2.5cm]{geometry}
+
+\graphicspath{{slike/}}
+
+\newcommand{\slika}[2]{%
+  \IfFileExists{slike/#1}
+    {\includegraphics[width=#2\textwidth]{#1}}
+    {\fbox{\parbox[c][6cm][c]{0.85\textwidth}{\centering Manjka slika:\\ \texttt{slike/#1}}}}}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  {\large Univerza v Mariboru\\
+   Fakulteta za elektrotehniko, računalništvo in informatiko\\[0.3cm]
+   Informatika in tehnologije komuniciranja\\}
+  \vfill
+  {\Huge\bfseries Spletna stran za Pizzerijo Bumerang\\[0.4cm]}
+  {\Large Pregled obstoječih rešitev\\[0.3cm]}
+  {\large Naloga 6: Priprava na razvoj\\}
+  \vfill
+  {\large
+   Nejc Hribernik (vodja)\\
+   Aleks Rožič\\
+   Anej Sgerm\\}
+  \vfill
+  {\large Maribor, november 2026}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Uvod}
+
+Pizzerija Bumerang je pizzerija v Dravogradu. Naš cilj je zanjo izdelati
+spletno stran, na kateri bodo obiskovalci lahko spoznali lokal, pregledali
+jedilnik, oddali naročilo ter rezervirali mizo.
+
+Preden začnemo z razvojem, smo pregledali tri obstoječe rešitve, ki ponujajo
+podobne storitve: spletno stran mednarodne verige Papa John's, spletno stran
+mariborske Pizzerie Toscana ter slovensko platformo za dostavo hrane
+ehrana.si. Pri vsaki smo opisali, čemu je namenjena, katere so njene ključne
+funkcionalnosti ter kakšne so njene prednosti in slabosti. Ugotovitve smo
+uporabili pri oblikovanju seznama funkcionalnosti in žičnih modelov
+(wireframov) naše spletne strani.
+
+\section{Obstoječa rešitev 1: Papa John's (papajohns.de)}
+
+\subsection*{Kratek opis}
+Papa John's je mednarodna veriga pizzerij. Njena nemška spletna stran omogoča
+naročanje pic in drugih jedi z dostavo ali osebnim prevzemom. Namenjena je
+strankam, ki želijo hrano hitro naročiti prek spleta, brez klica
+\cite{papajohns}.
+
+\subsection*{Ključne funkcionalnosti}
+\begin{itemize}
+  \item vnos naslova (ulica, hišna številka, poštna številka) ali uporaba trenutne lokacije,
+  \item izbira med dostavo (\textit{Delivery}) in prevzemom (\textit{Collection}),
+  \item prikaz predvidenega časa dostave (od 30 minut),
+  \item prikaz akcij in paketov (npr.\ pica in prigrizek ali sladica),
+  \item pregled jedilnika po kategorijah (npr.\ toplo pečeni sendviči),
+  \item menjava jezika med nemščino in angleščino.
+\end{itemize}
+
+\subsection*{Prednosti}
+\begin{itemize}
+  \item stran je pregledna,
+  \item naročanje se začne že na vrhu domače strani z vnosom naslova,
+  \item akcije so velike in opazne,
+  \item izbira med dostavo in prevzemom je enostavna,
+  \item na voljo je angleški jezik.
+\end{itemize}
+
+\subsection*{Slabosti}
+\begin{itemize}
+  \item velik oglasni pas zavzame veliko prostora,
+  \item jedilnik je viden šele ob drsenju navzdol,
+  \item nekatere akcije veljajo le v izbranih poslovalnicah.
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \slika{resitev1.png}{0.95}
+  \caption{Domača stran Papa John's (papajohns.de) \cite{papajohns}.}
+  \label{fig:papajohns}
+\end{figure}
+
+\section{Obstoječa rešitev 2: Pizzeria Toscana Maribor (toscana-mb.si)}
+
+\subsection*{Kratek opis}
+Pizzeria Toscana je samostojna pizzerija v središču Maribora, na Ruski
+ulici~4, ki ponuja italijansko hrano s poudarkom na picah \cite{toscanaKupi}.
+Turistični portal Visit Maribor jo uvršča med najboljše pizzerije v mestu
+\cite{visitmaribor}. Lokal ima lastno spletno stran, ki je namenjena
+predvsem predstavitvi lokala in posredovanju kontaktnih podatkov
+\cite{toscana}.
+
+\subsection*{Ključne funkcionalnosti}
+\begin{itemize}
+  \item predstavitev lokala in njegove ponudbe,
+  \item pregled jedilnika,
+  \item kontaktni podatki: naslov, telefonska številka in e-pošta,
+  \item objavljen delovni čas,
+  \item prikaz lokacije na zemljevidu,
+  \item rezervacija mize in naročilo za s seboj po telefonu \cite{toscanaKupi}.
+\end{itemize}
+
+\subsection*{Prednosti}
+\begin{itemize}
+  \item lokal ima lastno spletno stran in s tem lastno predstavitev,
+        ki je ne deli z drugimi restavracijami,
+  \item uporabnik hitro najde osnovne informacije: kje je lokal, kdaj je
+        odprt in kako ga kontaktira,
+  \item stran gradi prepoznavnost lokala, ki ima dober sloves tudi na
+        turističnih portalih \cite{visitmaribor},
+  \item ni provizij platform za dostavo, saj stranka komunicira neposredno
+        z lokalom.
+\end{itemize}
+
+\subsection*{Slabosti}
+\begin{itemize}
+  \item ni spletnega naročanja ali košarice, naročilo je mogoče le po
+        telefonu \cite{toscanaKupi},
+  \item rezervacija mize ni mogoča prek spleta, temveč samo s klicem
+        \cite{toscanaKupi},
+  \item stran je namenjena predvsem informiranju, zato uporabnik po ogledu
+        jedilnika ne more takoj ukrepati,
+  \item pri klicu v času največje gneče lahko stranka čaka ali ne
+        dobi odgovora.
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \slika{resitev2.png}{0.95}
+  \caption{Domača stran Pizzerie Toscana Maribor \cite{toscana}.}
+  \label{fig:resitev2}
+\end{figure}
+
+\section{Obstoječa rešitev 3: ehrana.si}
+
+\subsection*{Kratek opis}
+ehrana.si je slovenska spletna platforma in mobilna aplikacija za naročanje
+dostave hrane na dom. Uporabnik izbere restavracijo, sestavi naročilo in ga
+prejme na izbrani naslov \cite{ehrana}. Storitev je bila leta 2024 ponovno
+zagnana pod novim lastnikom, ki želi pokriti tudi manjše kraje in podeželje
+ter podpirati lokalne gostince \cite{ehrana24ur}. Deluje v spletnem
+brskalniku ter na napravah Android in iOS \cite{ehranaApp}.
+
+\subsection*{Ključne funkcionalnosti}
+\begin{itemize}
+  \item vnos naslova dostave in prikaz restavracij, ki dostavljajo na ta naslov,
+  \item brskanje po restavracijah glede na kraj ali vrsto kuhinje (pice, burgerji, azijska, veganska \dots),
+  \item košarica in oddaja naročila,
+  \item plačilo z gotovino, s kartico ali prek spleta,
+  \item uporabniški račun s shranjenimi naslovi, priljubljenimi naročili in zgodovino naročil,
+  \item prijava z e-pošto, Facebookom ali Googlom,
+  \item stran s popusti in akcijami ter naročanje na študentske bone,
+  \item obvestilo o predvidenem času dostave,
+  \item komentarji in ocene uporabnikov.
+\end{itemize}
+
+\subsection*{Prednosti}
+\begin{itemize}
+  \item slovenska storitev v slovenskem jeziku z veliko izbiro restavracij po vsej državi,
+  \item več načinov plačila, tudi gotovina ob dostavi,
+  \item pregleden postopek v treh korakih: izberi restavracijo, izberi jed, spremljaj dostavo,
+  \item shranjevanje priljubljenih naročil omogoča hitro ponovno naročanje.
+\end{itemize}
+
+\subsection*{Slabosti}
+\begin{itemize}
+  \item gre za splošno platformo, zato posamezna restavracija nima lastne
+        predstavitve (zgodbe, fotografij lokala, posebnosti),
+  \item ni možnosti rezervacije mize,
+  \item spletna stran ne omenja prevzema v lokalu,
+  \item ponudba je odvisna od tega, ali restavracija dostavlja na uporabnikov
+        naslov, kar je v manjših krajih lahko omejeno.
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \slika{ehrana.png}{0.95}
+  \caption{Domača stran spletne platforme ehrana.si \cite{ehrana}.}
+  \label{fig:ehrana}
+\end{figure}
+
+\section{Zaključek}
+
+Pregled je pokazal, da vse tri rešitve dobro podpirajo spletno naročanje
+hrane ali predstavitev lokala, vendar nobena ne pokrije vsega, kar potrebuje
+manjša lokalna pizzerija. Spletna stran Papa John's ima pregledno naročanje
+ter izbiro med dostavo in prevzemom, a je namenjena veliki verigi in jo
+prekrivajo oglasi. Pizzeria Toscana ima kot samostojen lokal lastno spletno
+stran, vendar ta služi predvsem informiranju, saj sta naročilo in
+rezervacija mize mogoča le po telefonu. Platforma ehrana.si ponuja veliko
+izbiro in več načinov plačila, vendar restavracija na njej nima lastne
+predstavitve in ne omogoča rezervacije mize.
+
+Na naši spletni strani za Pizzerijo Bumerang bomo zato združili dobre lastnosti
+pregledanih rešitev: lastno predstavitev lokala, pregleden jedilnik s
+košarico, enostavno oddajo naročila ter obrazec za rezervacijo mize in
+kontakt. Izogibali se bomo velikim oglasnim pasovom, ki zakrijejo vsebino,
+jedilnik pa bo dostopen neposredno iz navigacije.
+
+\begin{thebibliography}{9}
+\bibitem{papajohns} Papa John's Deutschland. Dostopno na:
+  \url{https://www.papajohns.de} (dostopano 22.~11.~2026).
+\bibitem{toscana} Pizzeria Toscana Maribor. Dostopno na:
+  \url{https://www.toscana-mb.si} (dostopano 22.~11.~2026).
+\bibitem{toscanaKupi} Kupi.com: Pizzeria Toscana, Maribor. Dostopno na:
+  \url{https://kupi.com/en-ae/explore/slovenia/maribor/pizzeria-toscana}
+  (dostopano 22.~11.~2026).
+\bibitem{visitmaribor} Visit Maribor: Best pizza is home in Maribor. Dostopno na:
+  \url{https://www.visitmaribor.si/en/what-to-do/wine-and-culinary/restaurants/in-the-company-of-the-best/top-good-pizza/}
+  (dostopano 22.~11.~2026).
+\bibitem{ehrana} ehrana.si -- Dostava hrane na dom. Dostopno na:
+  \url{https://www.ehrana.si/} (dostopano 22.~11.~2026).
+\bibitem{ehranaApp} ehrana -- Dostava Hrane, App Store. Dostopno na:
+  \url{https://apps.apple.com/app/id6504228246} (dostopano 22.~11.~2026).
+\bibitem{ehrana24ur} 24ur.com: Ehrana je nazaj, pokriti želijo tudi
+  podeželje, 19.~7.~2024. Dostopno na:
+  \url{https://www.24ur.com/novice/gospodarstvo/ehrana-je-nazaj-pokriti-zelijo-tudi-podezelje.html}
+  (dostopano 22.~11.~2026).
+\end{thebibliography}
+
+\end{document}
