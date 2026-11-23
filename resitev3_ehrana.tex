@@ -1,0 +1,72 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[slovene]{babel}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\section*{Obstoječa rešitev 3: ehrana.si}
+
+\subsection*{Kratek opis}
+ehrana.si je slovenska spletna platforma in mobilna aplikacija za naročanje
+dostave hrane na dom. Uporabnik izbere restavracijo, sestavi naročilo in ga
+prejme na izbrani naslov \cite{ehrana}. Storitev je bila leta 2024 ponovno
+zagnana pod novim lastnikom, ki želi pokriti tudi manjše kraje in podeželje
+ter podpirati lokalne gostince \cite{ehrana24ur}. Deluje v spletnem
+brskalniku ter na napravah Android in iOS \cite{ehranaApp}.
+
+\subsection*{Ključne funkcionalnosti}
+\begin{itemize}
+  \item vnos naslova dostave in prikaz restavracij, ki dostavljajo na ta naslov,
+  \item brskanje po restavracijah glede na kraj ali vrsto kuhinje (pice, burgerji, azijska, veganska \dots),
+  \item košarica in oddaja naročila,
+  \item plačilo z gotovino, s kartico ali prek spleta,
+  \item uporabniški račun s shranjenimi naslovi, priljubljenimi naročili in zgodovino naročil,
+  \item prijava z e-pošto, Facebookom ali Googlom,
+  \item stran s popusti in akcijami ter naročanje na študentske bone,
+  \item obvestilo o predvidenem času dostave,
+  \item komentarji in ocene uporabnikov.
+\end{itemize}
+
+\subsection*{Prednosti}
+\begin{itemize}
+  \item slovenska storitev v slovenskem jeziku z veliko izbiro restavracij po vsej državi,
+  \item več načinov plačila, tudi gotovina ob dostavi,
+  \item pregleden postopek v treh korakih: izberi restavracijo, izberi jed, spremljaj dostavo,
+  \item shranjevanje priljubljenih naročil omogoča hitro ponovno naročanje.
+\end{itemize}
+
+\subsection*{Slabosti}
+\begin{itemize}
+  \item gre za splošno platformo, zato posamezna restavracija nima lastne
+        predstavitve (zgodbe, fotografij lokala, posebnosti),
+  \item ni možnosti rezervacije mize,
+  \item spletna stran ne omenja prevzema v lokalu,
+  \item ponudba je odvisna od tega, ali restavracija dostavlja na uporabnikov
+        naslov, kar je v manjših krajih lahko omejeno.
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \IfFileExists{ehrana.png}
+    {\includegraphics[width=0.9\textwidth]{ehrana.png}}
+    {\fbox{\parbox[c][6cm][c]{0.85\textwidth}{\centering Tukaj bo posnetek zaslona\\ (naloži ehrana.png)}}}
+  \caption{Domača stran spletne platforme ehrana.si \cite{ehrana}.}
+  \label{fig:ehrana}
+\end{figure}
+
+\begin{thebibliography}{9}
+\bibitem{ehrana} ehrana.si -- Dostava hrane na dom. Dostopno na:
+  \url{https://www.ehrana.si/} (dostopano 22.~11.~2026).
+\bibitem{ehranaApp} ehrana -- Dostava Hrane, App Store. Dostopno na:
+  \url{https://apps.apple.com/app/id6504228246} (dostopano 22.~11.~2026).
+\bibitem{ehrana24ur} 24ur.com: Ehrana je nazaj, pokriti želijo tudi
+  podeželje, 19.~7.~2024. Dostopno na:
+  \url{https://www.24ur.com/novice/gospodarstvo/ehrana-je-nazaj-pokriti-zelijo-tudi-podezelje.html}
+  (dostopano 22.~11.~2026).
+\end{thebibliography}
+
+\end{document}
